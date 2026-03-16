@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Data.Common;
+using System.Reflection.PortableExecutable;
+
 
 public class Program
 {
@@ -10,22 +13,86 @@ public class Program
         //public and private are used to control exposure
         
 
+
         //public is the least secure, can be seen anywhere!!!
         //internal is only avaialble to the Project folder which is inside the solution
         //protected - only that class can use them, or one that inherits from the class
         // all animals can eat and breathe, but wolves bite and walk
         //private is the most secure _ only that class can see/use them
+        
+        //Pillar 2: Inheritance
+        //D.R.Y. - Don't Repeat Yourself - reusable code
+        //if you find yourself copy pasting, that code should really be a method
+
         Car car = new Car("Hotwheels", "speedster");
         Console.WriteLine(car.Make);
 
+        Character character = new Character();
+        character.SetLevel(1);
+
+        Console.WriteLine(character.Level); 
+
+        
         //if level cap must be level 50, there would not be anything to stop that right now
         // so lets fix it.
 
         // using an _underscore before a variable usually means its _private
+        
+        Animal animal = new Animal();
+        animal.MakeSound();
+
+        Cat cat = new Cat();
+        cat.Name = "garfield";
+        cat.Eat();
+
+        Console.WriteLine(cat.Name);
+
+        Dog dog = new Dog();
+        dog.Name = "Banna caffa latta";
+        dog.Eat();
+        dog.MakeSound();
+
+
+        /*
+        VideoGame Example
+        Character - hero, villain, mosnter
+        names, id, health, strength, food, spells, luck, intelligence
+
+        hero
+        exp to next level
+        reputation - hero
+        rival
+
+        villain
+        monolog
+        backstory
+
+        monster
+        aggro distance
+        aggro level (aggro goes down with gold boots equipped)
+        exp granted (on kill of monster)
+
+        
+
+        Real World example
+
+        if i want to give an attribute or a method to everybody you just give it once to the employee and everyone gets it        
+        Employee
+        id, name, birthday, startdate, ssn, salary, manager 
+
+        Manager  : Employee //has all his superpowers and more
+        List<Employees> manage, task (approve time off), vacation days, discount
+
+        Hr: Employee
+        List all employees, urgent tasks, training schedule
+
+
+        */
+
     }
 }
 
-            //i think you might hide access behind an if that tests a guid
+            //i think you might hide access behind an If that tests a guid
         //lol we talked about extreme vs too not extreme, and then 
         // the ide didnt wnat to let mr jesnen do private classes, 
         // just public but i guess we can do private variables
