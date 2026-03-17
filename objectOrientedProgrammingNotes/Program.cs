@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data.Common;
 using System.Reflection.PortableExecutable;
+using System.Runtime.InteropServices.Marshalling;
 
 
 public class Program
@@ -20,9 +21,23 @@ public class Program
         // all animals can eat and breathe, but wolves bite and walk
         //private is the most secure _ only that class can see/use them
         
-        //Pillar 2: Inheritance
+        //Pillar 2: Inheritance - parent/base class - relationships, tool
         //D.R.Y. - Don't Repeat Yourself - reusable code
         //if you find yourself copy pasting, that code should really be a method
+        // I am reusing or extending behavior, INHERITANCE IS
+
+        //Pillar 3: Abstraction - blueprint/rule, - the concept
+        //Every animal should make a sound
+        //I'm defining what need to be done
+        //Abstraction is almsost always implemented using inheritance, tightly connected but not viewed as the same.
+        
+        //Pillar 4: Polymorphism - use objects interchangeably 
+
+
+        // THESE PILLARS ARE THE TERMS THAT YOU WILL NEED TO KNOW IN A JOB INTERVIEW BUT YOU WON'T BE USING THOSE WORDS IN DAY TO DAY OFFICE CONVERSATIONS
+
+        //THROW A JOB FLIER INTO AI AND ASK THE BOT TO QUIZ YOU ON THE TERMS IN THE FLIER AS WELL AS THESE ONES, GOOD REFRESHER TO GET READY
+
 
         Car car = new Car("Hotwheels", "speedster");
         Console.WriteLine(car.Make);
@@ -32,6 +47,18 @@ public class Program
 
         Console.WriteLine(character.Level); 
 
+        List<Animal> animals = new List<Animal>();
+        Animals.Add(dog);
+        Animals.Add(cat);
+        
+        foreach (var animal in animals)
+        {
+         animal.Eat();
+         animal.MakeSound();   
+        }
+
+
+    
         
         //if level cap must be level 50, there would not be anything to stop that right now
         // so lets fix it.
@@ -52,7 +79,7 @@ public class Program
         dog.Eat();
         dog.MakeSound();
 
-        //sweet i jsut tested this for a research assignment, 
+        //sweet i just tested this for a research assignment, 
         //when you type prop and hit Tab it populates a new a object/variable with get sets for you to work with 
         
         //public int MyProperty { get; set; }

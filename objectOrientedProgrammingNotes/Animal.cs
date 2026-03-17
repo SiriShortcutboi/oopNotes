@@ -10,6 +10,8 @@ namespace ConsoleApp4 //an Animal is never real, its always what is the animal
     internal abstract class Animal
     {
         public Guid ID {get; set;}
+        public string Name {get; set;}
+        public string Description {get; set;}
         //adopted date
         //food used
 
