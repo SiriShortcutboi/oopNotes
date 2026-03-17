@@ -52,6 +52,11 @@ public class Program
         dog.Eat();
         dog.MakeSound();
 
+        //sweet i jsut tested this for a research assignment, 
+        //when you type prop and hit Tab it populates a new a object/variable with get sets for you to work with 
+        
+        //public int MyProperty { get; set; }
+
 
         /*
         VideoGame Example
