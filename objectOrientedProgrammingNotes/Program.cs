@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Data.Common;
-using System.Reflection.PortableExecutable;
-using System.Runtime.InteropServices.Marshalling;
 
 
 public class Program
@@ -33,98 +30,45 @@ public class Program
         
         //Pillar 4: Polymorphism - use objects interchangeably 
 
+        //class - blueprint
+        //object - is the actualy thing built from it, we are giving shape to it
 
+    /*     //if we say
+        Cat cat = new Cat();
+        object kitty = new Cat(); //we don't actually know squat about this object anymore
+        PoliMethod(cat);                //this allows for some polymorphism
+        PoliMethod(dog); */
+
+        Cat cat = new Cat();
+        Dog dog = new Dog();
+        object dog3 = new Dog();
+        object cat3 = new Cat();
+        Wolf wolf = new Wolf(); // 
+
+        PoliMethod(cat);           
+        PoliMethod(dog); 
+        PoliMethod(wolf);
+
+        List<Animal> animals = new List<Animal>();
+        animals.Add(dog); 
+        animals.Add(cat); 
+        animals.Add(wolf);
+    }
+
+    internal static void PoliMethod(Animal animal) //the name is consistent, but what object can be tossed in here can vary.
+    {
+        
+        animal.MakeSound;
+    }
         // THESE PILLARS ARE THE TERMS THAT YOU WILL NEED TO KNOW IN A JOB INTERVIEW BUT YOU WON'T BE USING THOSE WORDS IN DAY TO DAY OFFICE CONVERSATIONS
 
         //THROW A JOB FLIER INTO AI AND ASK THE BOT TO QUIZ YOU ON THE TERMS IN THE FLIER AS WELL AS THESE ONES, GOOD REFRESHER TO GET READY
 
 
-        Car car = new Car("Hotwheels", "speedster");
-        Console.WriteLine(car.Make);
 
-        Character character = new Character();
-        character.SetLevel(1);
-
-        Console.WriteLine(character.Level); 
-
-        List<Animal> animals = new List<Animal>();
-        Animals.Add(dog);
-        Animals.Add(cat);
-        
-        foreach (var animal in animals)
-        {
-         animal.Eat();
-         animal.MakeSound();   
-        }
-
-
-    
-        
-        //if level cap must be level 50, there would not be anything to stop that right now
-        // so lets fix it.
-
-        // using an _underscore before a variable usually means its _private
-        
-        Animal animal = new Animal();
-        animal.MakeSound();
-
-        Cat cat = new Cat();
-        cat.Name = "garfield";
-        cat.Eat();
-
-        Console.WriteLine(cat.Name);
-
-        Dog dog = new Dog();
-        dog.Name = "Banna caffa latta";
-        dog.Eat();
-        dog.MakeSound();
-
-        //sweet i just tested this for a research assignment, 
-        //when you type prop and hit Tab it populates a new a object/variable with get sets for you to work with 
-        
-        //public int MyProperty { get; set; }
-
-
-        /*
-        VideoGame Example
-        Character - hero, villain, mosnter
-        names, id, health, strength, food, spells, luck, intelligence
-
-        hero
-        exp to next level
-        reputation - hero
-        rival
-
-        villain
-        monolog
-        backstory
-
-        monster
-        aggro distance
-        aggro level (aggro goes down with gold boots equipped)
-        exp granted (on kill of monster)
-
-        
-
-        Real World example
-
-        if i want to give an attribute or a method to everybody you just give it once to the employee and everyone gets it        
-        Employee
-        id, name, birthday, startdate, ssn, salary, manager 
-
-        Manager  : Employee //has all his superpowers and more
-        List<Employees> manage, task (approve time off), vacation days, discount
-
-        Hr: Employee
-        List all employees, urgent tasks, training schedule
-
-
-        */
-
-    }
 }
 
-            //i think you might hide access behind an If that tests a guid
+            //i think you might hide access behind: an If that tests a guid
         //lol we talked about extreme vs too not extreme, and then 
         // the ide didnt wnat to let mr jesnen do private classes, 
         // just public but i guess we can do private variables

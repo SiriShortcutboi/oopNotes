@@ -6,7 +6,7 @@ namespace ConsoleApp4 //an Animal is never real, its always what is the animal
 //an abstract class is kinda like an Airport, you never go to the airport 
 //except for the purpose of using it to go somewhere else. 
 {
-    //base class, Parent Class
+    //Animal is a Parent Class
     internal abstract class Animal
     {
         public Guid ID {get; set;}
